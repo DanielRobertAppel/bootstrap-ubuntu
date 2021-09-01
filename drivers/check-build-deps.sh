@@ -25,7 +25,7 @@ fi
 
 
 # Let apt manage what packages already exist, and which ones to install
-apt get --yes install \
+apt-get --yes install \
 apt-transport-https \
 autoconf \
 automake \
@@ -63,8 +63,8 @@ software-properties-common
 # Install drivers that are found in this parent dir
 ## Realtek drivers
 ### The realtek drivers found within this directory are only needed if you are running linux kernel 5.6 or lower.
-if [[ $(uname -r | awk -F "." {print $1}) -lte '5' ]]; then
-    if [[$(uname -r | awk -F "." {print $2}) -lte '6' ]]; then
+if [[ $(uname -r | awk -F "." {print $1}) -le '5' ]]; then
+    if [[$(uname -r | awk -F "." {print $2}) -le '6' ]]; then
         cd realtek
         for driver_dir in $(find . -maxdepth 1 -type d); do
             cd $driver_dir && bash autorun.sh
