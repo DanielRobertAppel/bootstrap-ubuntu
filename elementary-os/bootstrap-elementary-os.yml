@@ -228,6 +228,7 @@
           - meld
           - p7zip-full
           - transmission-gtk
+          - nvidia-driver-470
         state: latest
     - name: "Clone Install Powerline Fonts"
       git:
