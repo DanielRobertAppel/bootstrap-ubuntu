@@ -1,0 +1,129 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: "Install 3rd Pary Signing Keys"
+      apt_key:
+        url: https://dl.google.com/linux/linux_signing_key.pub
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+        
+    - name: "Install Graphics Drivers Repository"
+      apt_repository:
+        repo: 'ppa:graphics-drivers/ppa'
+        state: present
+        filename: 'graphics-drivers'
+
+    - name: "Install Mozilla Firefox Repository"
+      apt_repository:
+        repo: 'ppa:ubuntu-mozilla-security/ppa'
+        state: present
+        filename: 'mozilla-firefox'
+
+    - name: "Install Google Chrome Repository"
+      apt_repository:
+        repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+        state: present
+        filename: 'google-chrome'
+
+    - name: "Install VS Code Repository"
+      apt_repository:
+        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+        state: present
+        filename: 'vs-code'
+
+    - name: "Install Savoury1 Repositories"
+      apt_repository:
+        repo: 'ppa:savoury1/android'
+        repo: 'ppa:savoury1/backports'
+        repo: 'ppa:savoury1/blender'
+        repo: 'ppa:savoury1/build-tools'
+        repo: 'ppa:savoury1/chromium'
+        repo: 'ppa:savoury1/curl34'
+        repo: 'ppa:savoury1/dbg1'
+        repo: 'ppa:savoury1/digikam'
+        repo: 'ppa:savoury1/display'
+        repo: 'ppa:savoury1/dosbox'
+        repo: 'ppa:savoury1/encryption'
+        repo: 'ppa:savoury1/ffmpeg-git'
+        repo: 'ppa:savoury1/ffmpeg4'
+        repo: 'ppa:savoury1/fonts'
+        repo: 'ppa:savoury1/games'
+        repo: 'ppa:savoury1/gimp'
+        repo: 'ppa:savoury1/gpg'
+        repo: 'ppa:savoury1/graphics'
+        repo: 'ppa:savoury1/handbrake'
+        repo: 'ppa:savoury1/imagej'
+        repo: 'ppa:savoury1/inkscape'
+        repo: 'ppa:savoury1/kde-5-80'
+        repo: 'ppa:savoury1/libreoffice'
+        repo: 'ppa:savoury1/libreoffice-7-1'
+        repo: 'ppa:savoury1/llvm-defaults-13'
+        repo: 'ppa:savoury1/meld'
+        repo: 'ppa:savoury1/metamorphose2'
+        repo: 'ppa:savoury1/minisign'
+        repo: 'ppa:savoury1/mpv'
+        repo: 'ppa:savoury1/multimedia'
+        repo: 'ppa:savoury1/python'
+        repo: 'ppa:savoury1/qt-5-15'
+        repo: 'ppa:savoury1/scribus'
+        repo: 'ppa:savoury1/telegram'
+        repo: 'ppa:savoury1/utilities'
+        repo: 'ppa:savoury1/vapoursynth'
+        repo: 'ppa:savoury1/virtualisation'
+        repo: 'ppa:savoury1/vlc3'
+        repo: 'ppa:savoury1/vnstat'
+        repo: 'ppa:savoury1/wine5'
+        repo: 'ppa:savoury1/x2go'
+        repo: 'ppa:savoury1/xapps'
+        repo: 'ppa:savoury1/xscreensaver'
+        repo: 'ppa:tuxinvader/lts-mainline'
+        filename: savoury1
+        state: present
+
+    - name: "Update Apt Cache"
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=0
+
+    - name: "Update Kernel"
+      apt:
+        name:
+          - linux-generic-5.14
+        state: latest
+
+    - name: "Install Updates"
+      apt: upgrade=dist force_apt_get=yes
+
+    - name: "Install Applications"
+      apt:
+        name:
+          - code
+          - vlc
+          - google-chrome-stable
+          - ffmpeg
+          - cowsay
+          - fortune
+          - meld
+          - p7zip-full
+          - transmission-gtk
+        state: latest
+    - name: "Clone Install Powerline Fonts"
+      git:
+        repo: https://github.com/powerline/fonts
+        dest: /home/daniel/powerline-fonts
+        single_branch: yes
+        version: master
+
+    - name: "Install Powerline Fonts"
+      shell:
+        cmd: /bin/bash /home/daniel/powerline-fonts/install.sh
+
+    - name: "Install Powerline Shell"
+      pip:
+        name:
+          - powerline-shell
+        state: latest
+
+    - name: "Copy .bashrc"
+      copy:
+        src: /home/daniel/bootstrap-ubuntu/.bashrc
+        dest: /home/daniel/.bashrc
