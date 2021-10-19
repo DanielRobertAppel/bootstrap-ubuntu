@@ -32,54 +32,177 @@
         state: present
         filename: 'vs-code'
 
-    - name: "Install Savoury1 Repositories"
+    - name: "Install Savoury1 Repository - Android"
       apt_repository:
-        repo: 'ppa:savoury1/android'
-        repo: 'ppa:savoury1/backports'
-        repo: 'ppa:savoury1/blender'
-        repo: 'ppa:savoury1/build-tools'
-        repo: 'ppa:savoury1/chromium'
-        repo: 'ppa:savoury1/curl34'
-        repo: 'ppa:savoury1/dbg1'
-        repo: 'ppa:savoury1/digikam'
-        repo: 'ppa:savoury1/display'
-        repo: 'ppa:savoury1/dosbox'
-        repo: 'ppa:savoury1/encryption'
-        repo: 'ppa:savoury1/ffmpeg-git'
-        repo: 'ppa:savoury1/ffmpeg4'
-        repo: 'ppa:savoury1/fonts'
-        repo: 'ppa:savoury1/games'
-        repo: 'ppa:savoury1/gimp'
-        repo: 'ppa:savoury1/gpg'
-        repo: 'ppa:savoury1/graphics'
-        repo: 'ppa:savoury1/handbrake'
-        repo: 'ppa:savoury1/imagej'
-        repo: 'ppa:savoury1/inkscape'
-        repo: 'ppa:savoury1/kde-5-80'
-        repo: 'ppa:savoury1/libreoffice'
-        repo: 'ppa:savoury1/libreoffice-7-1'
-        repo: 'ppa:savoury1/llvm-defaults-13'
-        repo: 'ppa:savoury1/meld'
+        repo: ppa:savoury1/android
+
+    - name: "Install Savoury1 Repository - Backports"
+      apt_repository:
+        repo: ppa:savoury1/backports
+
+    - name: "Install Savoury1 Repository - Blender"
+      apt_repository:
+        repo: ppa:savoury1/blender
+
+    - name: "Install Savoury1 Repository - Build-Tools"
+      apt_repository:
+        repo: ppa:savoury1/build-tools
+
+    - name: "Install Savoury1 Repository - Chromium"
+      apt_repository:
+        repo: ppa:savoury1/chromium
+
+    - name: "Install Savoury1 Repository - Curl 3 & 4"
+      apt_repository:
+        repo: ppa:savoury1/curl34
+
+    - name: "Install Savoury1 Repository - Digikam"
+      apt_repository:
+        repo: ppa:savoury1/digikam
+
+    - name: "Install Savoury1 Repository - Display"
+      apt_repository:
+        repo: ppa:savoury1/display
+
+    - name: "Install Savoury1 Repository - DosBox"
+      apt_repository:
+        repo: ppa:savoury1/dosbox
+
+    - name: "Install Savoury1 Repository - Encryption"
+      apt_repository:
+        repo: ppa:savoury1/encryption
+
+    - name: "Install Savoury1 Repository - FFMpeg-Git"
+      apt_repository:
+        repo: ppa:savoury1/ffmpeg-git
+
+    - name: "Install Savoury1 Repository - FFMpeg4"
+      apt_repository:
+        repo: ppa:savoury1/ffmpeg4
+
+    - name: "Install Savoury1 Repository - Fonts"
+      apt_repository:
+        repo: ppa:savoury1/fonts
+
+    - name: "Install Savoury1 Repository - Games"
+      apt_repository:
+        repo: ppa:savoury1/games
+
+    - name: "Install Savoury1 Repository - Gimp"
+      apt_repository:
+        repo: ppa:savoury1/gimp
+
+    - name: "Install Savoury1 Repository - GPG"
+      apt_repository:
+        repo: ppa:savoury1/gpg
+
+    - name: "Install Savoury1 Repository - Graphics"
+      apt_repository:
+        repo: ppa:savoury1/graphics
+
+    - name: "Install Savoury1 Repository - HandBrake"
+      apt_repository:
+        repo: ppa:savoury1/handbrake
+
+    - name: "Install Savoury1 Repository - ImageJ"
+      apt_repository:
+        repo: ppa:savoury1/imagej
+
+    - name: "Install Savoury1 Repository - Inkscape"
+      apt_repository:
+        repo: ppa:savoury1/inkscape
+
+    - name: "Install Savoury1 Repository - KDE 5.80"
+      apt_repository:
+        repo: ppa:savoury1/kde-5-80
+
+    - name: "Install Savoury1 Repository - LibreOffice Requirements"
+      apt_repository:
+        repo: ppa:savoury1/libreoffice
+
+    - name: "Install Savoury1 Repository - LibreOffice 7.1"
+      apt_repository:
+        repo: ppa:savoury1/libreoffice-7-1
+
+    - name: "Install Savoury1 Repository - LLVM 13"
+      apt_repository:
+        repo: ppa:savoury1/llvm-defaults-13
+
+    - name: "Install Savoury1 Repository - Meld"
+      apt_repository:
+        repo: ppa:savoury1/meld
+
+    - name: "Install Savoury1 Repository - Metamorphose 2"
+      apt_repository:
         repo: 'ppa:savoury1/metamorphose2'
-        repo: 'ppa:savoury1/minisign'
-        repo: 'ppa:savoury1/mpv'
-        repo: 'ppa:savoury1/multimedia'
-        repo: 'ppa:savoury1/python'
-        repo: 'ppa:savoury1/qt-5-15'
-        repo: 'ppa:savoury1/scribus'
-        repo: 'ppa:savoury1/telegram'
-        repo: 'ppa:savoury1/utilities'
-        repo: 'ppa:savoury1/vapoursynth'
-        repo: 'ppa:savoury1/virtualisation'
-        repo: 'ppa:savoury1/vlc3'
-        repo: 'ppa:savoury1/vnstat'
-        repo: 'ppa:savoury1/wine5'
-        repo: 'ppa:savoury1/x2go'
-        repo: 'ppa:savoury1/xapps'
-        repo: 'ppa:savoury1/xscreensaver'
-        repo: 'ppa:tuxinvader/lts-mainline'
-        filename: savoury1
-        state: present
+
+    - name: "Install Savoury1 Repository - MiniSign"
+      apt_repository:
+        repo: ppa:savoury1/minisign
+
+    - name: "Install Savoury1 Repository - MPV"
+      apt_repository:
+        repo: ppa:savoury1/mpv
+
+    - name: "Install Savoury1 Repository - Multimedia"
+      apt_repository:
+        repo: ppa:savoury1/multimedia
+
+    - name: "Install Savoury1 Repository - Python"
+      apt_repository:
+        repo: ppa:savoury1/python
+
+    - name: "Install Savoury1 Repository - QT 5.15"
+      apt_repository:
+        repo: ppa:savoury1/qt-5-15
+
+    - name: "Install Savoury1 Repository - Scribus"
+      apt_repository:
+        repo: ppa:savoury1/scribus
+
+    - name: "Install Savoury1 Repository - Telegram"
+      apt_repository:
+        repo: ppa:savoury1/telegram
+
+    - name: "Install Savoury1 Repository - Utilities"
+      apt_repository:
+        repo: ppa:savoury1/utilities
+
+    - name: "Install Savoury1 Repository - VapourSynth"
+      apt_repository:
+        repo: ppa:savoury1/vapoursynth
+
+    - name: "Install Savoury1 Repository - Virtualisation"
+      apt_repository:
+        repo: ppa:savoury1/virtualisation
+
+    - name: "Install Savoury1 Repository - VLC3"
+      apt_repository:
+        repo: ppa:savoury1/vlc3
+
+    - name: "Install Savoury1 Repository - VNStat"
+      apt_repository:
+        repo: ppa:savoury1/vnstat
+
+    - name: "Install Savoury1 Repository - Wine 5"
+      apt_repository:
+        repo: ppa:savoury1/wine5
+
+    - name: "Install Savoury1 Repository - X2Go"
+      apt_repository:
+        repo: ppa:savoury1/x2go
+
+    - name: "Install Savoury1 Repository - XApps"
+      apt_repository:
+        repo: ppa:savoury1/xapps
+
+    - name: "Install Savoury1 Repository - XScreenSaver"
+      apt_repository:
+        repo: ppa:savoury1/xscreensaver
+
+    - name: "Install TuxInvader Repository - LTS Mainline"
+      apt_repository:
+        repo: ppa:tuxinvader/lts-mainline
 
     - name: "Update Apt Cache"
       apt: update_cache=yes force_apt_get=yes cache_valid_time=0
