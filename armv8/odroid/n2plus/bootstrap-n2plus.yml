@@ -4,7 +4,7 @@
   tasks:
     - name: "Generating locale for UK English"
       shell:
-        cmd: locale-gen en_UK.UTF-8
+        cmd: locale-gen en_GB.UTF-8
 
     - name: "Setting Keyboard Keymap for UK English"
       shell:
