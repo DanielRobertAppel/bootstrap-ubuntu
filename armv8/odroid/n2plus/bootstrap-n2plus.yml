@@ -104,6 +104,12 @@
           - libswscale5
           - pulseaudio
           - pulseaudio-utils
+
+    - name: Ensure group "kodi" exists with correct gid
+      group:
+        name: kodi
+        state: present
+        gid: 1000
     
     - name: "Adding Kodi User Account"
       user:
