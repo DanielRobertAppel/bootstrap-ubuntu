@@ -73,7 +73,7 @@
 
     - name: "Symlink new libGL.so.1 to libGL.so"
       file:
-        path: /usr/lib/aarch64-linux-gnu/libGL.so.1
+        src: /usr/lib/aarch64-linux-gnu/libGL.so.1
         dest: /usr/lib/aarch64-linux-gnu/libGL.so
         state: link
 
