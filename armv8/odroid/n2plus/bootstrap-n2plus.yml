@@ -120,13 +120,12 @@
         append: yes
 
     - name: "Installing Kodi SystemCTL Service config"
-      file:
-        path: /root/bootstrap-ubuntu/armv8/odroid/n2plus/kodi.service
+      copy:
+        src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/kodi.service
         dest: /etc/systemd/system/kodi.service
         owner: root
         group: root
         mode: '0644'
-        state: file
 
     - name: "Reload SystemCTL configs"
       shell:
