@@ -11,7 +11,7 @@ systemctl stop unattended-upgrades.service
 systemctl disable unattended-upgrades.service
 
 # Killing any automated updates that might be hogging the system
-for process in $(ps aux | grep "apt" | grep -v "grep" | awk '[print $2]'); do
+for process in $(ps aux | grep "apt" | grep -v "grep" | awk '{print $2}'); do
 	kill -9 $process
 done
 
