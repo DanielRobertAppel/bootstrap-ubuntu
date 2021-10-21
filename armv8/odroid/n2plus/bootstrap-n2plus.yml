@@ -101,7 +101,9 @@
           - libdlna0
           - libpostproc55
           - libswresample3
-          - libswscale5 
+          - libswscale5
+          - pulseaudio
+          - pulseaudio-utils
     
     - name: "Adding Kodi User Account"
       user:
