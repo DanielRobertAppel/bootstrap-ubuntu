@@ -47,7 +47,7 @@
 
     - name: "Backup Current libGL"
       file:
-        path: /usr/lib/aarch64-linux-gnu/libGL.so.1.7.0
+        src: /usr/lib/aarch64-linux-gnu/libGL.so.1.7.0
         dest: /usr/lib/aarch64-linux-gnu/save.libGL.so.1.7.0
         owner: root
         group: root
@@ -65,7 +65,7 @@
 
     - name: "Install new libGL.so.1"
       file:
-        path: /root/gl4es/lib/libGL.so.1
+        src: /root/gl4es/lib/libGL.so.1
         dest: /usr/lib/aarch64-linux-gnu/libGL.so.1
         owner: root
         group: root
