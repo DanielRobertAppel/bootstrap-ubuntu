@@ -70,6 +70,7 @@
         owner: root
         group: root
         mode: '0644'
+        state: file
 
     - name: "Symlink new libGL.so.1 to libGL.so"
       file:
@@ -118,6 +119,7 @@
         owner: root
         group: root
         mode: '0644'
+        state: file
 
     - name: "Reload SystemCTL configs"
       shell:
