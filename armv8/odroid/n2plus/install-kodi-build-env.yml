@@ -1,0 +1,163 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: "Turn off Blue LED"
+      shell:
+        cmd: echo none > /sys/class/leds/blue\:heartbeat/trigger
+
+    - name: "Place Blue LED control script"
+      copy:
+        src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/blue-led-pulse-stop.sh
+        dest: /root/blue-led-pulse-stop.sh
+        owner: root
+        group: root
+        mode: '0770'
+
+    - name: "Set Blue LED to OFF after startup"
+      cron:
+        name: "Blue LED Stop"
+        special_time: reboot
+        job: /root/blue-led-pulse-stop.sh
+
+    - name: "Place Cursor Blink Control Script"
+      copy:
+        src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/blinking-cursor-stop.sh
+        dest: /root/blinking-cursor-stop.sh
+        owner: root
+        group: root
+        mode: '0770'
+
+    - name: "Stop Cursor Blinking after Startup"
+      cron:
+        name: "Cursor Blink Stop"
+        special_time: reboot
+        job: /root/blinking-cursor-stop.sh
+
+    - name: "Generating locale for UK English"
+      shell:
+        cmd: locale-gen en_GB.UTF-8
+
+    - name: "Setting Keyboard Keymap for UK English"
+      shell:
+        cmd: localectl set-keymap gb
+
+    - name: "Installing Build Dependencies"
+      apt:
+        name:
+          - autoconf
+          - automake
+          - autopoint
+          - gettext
+          - autotools-dev
+          - cmake
+          - curl
+          - default-jre
+          - gawk
+          - gcc
+          - g++
+          - cpp
+          - flatbuffers-compiler
+          - gdc
+          - gperf
+          - libasound2-dev
+          - libass-dev
+          - libavahi-client-dev
+          - libavahi-common-dev
+          - libbluetooth-dev
+          - libbluray-dev
+          - libbz2-dev
+          - libcdio-dev
+          - libcec4-dev
+          - libp8-platform-dev
+          - libcrossguid-dev
+          - libcurl4-openssl-dev
+          - libcwiid-dev
+          - libdbus-1-dev
+          - libegl1-mesa-dev
+          - libenca-dev
+          - libflac-dev
+          - libfontconfig-dev
+          - libfmt3-dev
+          - libfreetype6-dev
+          - libfribidi-dev
+          - libfstrcmp-dev
+          - libgcrypt-dev
+          - libgif-dev
+          - libgles2-mesa-dev
+          - libgl-dev
+          - libglew-dev
+          - libglu1-mesa-dev
+          - libgnutls-dev
+          - libgpg-error-dev
+          - libgtest-dev
+          - libios9660-dev
+          - libjpeg-dev
+          - liblcms2-dev
+          - liblirc-dec
+          - libltdl-dev
+          - liblzo2-dev
+          - libmicrohttpd-dev
+          - libmysqlclient-dev
+          - libnfs-dev
+          - libogg-dev
+          - libomxil-bellagio-dev
+          - libpcre3-dev
+          - libplist-dev
+          - libpng12-dev
+          - libpulse-dev
+          - libshairplay-dev
+          - libsmbclient-dev
+          - libspdlog-dev
+          - libsqlite3-dev
+          - libssl-dev
+          - libtag1-dev
+          - libtiff5-dev
+          - libtinyxml-dev
+          - libtool
+          - libudev-dev
+          - libva-dec
+          - libvdpau-dev
+          - libvorbis-dev
+          - libxkbcommon-dev
+          - libxmu-dev
+          - libxrandr-dev
+          - libxslt1-dev
+          - libxt-dev
+          - waylandpp-dev
+          - wayland-protocols
+          - lsb-release
+          - meson
+          - nasm
+          - ninja-build
+          - python3-dev
+          - python3-pil
+          - python-support
+          - rapidjson-dev
+          - swig
+          - unzip
+          - uuid-dev
+          - yasm
+          - zip
+          - zlib1g-dev
+        state: latest
+
+    - name: "Clone kodi repository Matrix Branch"
+      git:
+        repo: https://github.com/xbmc/xbmc
+        dest: /root/kodi-source
+        single_branch: yes
+        version: Matrix
+
+    - name: "Disable ModemManager"
+      shell:
+        cmd: systemctl disable ModemManager
+
+    - name: "Installing Timezone Management App"
+      apt:
+        name:
+          - chrony
+
+    - name: "Setting Timezone to London"
+      shell:
+        cmd: timedatectl set-timezone Europe/London

@@ -33,7 +33,7 @@
         name: "Cursor Blink Stop"
         special_time: reboot
         job: /root/blinking-cursor-stop.sh
-            
+
     - name: "Generating locale for UK English"
       shell:
         cmd: locale-gen en_GB.UTF-8
@@ -116,9 +116,6 @@
     - name: "Install Kodi and Dependencies"
       apt:
         name:
-          - kodi-fbdev
-          - kodi-fbdev-bin
-          - kodi-fbdev-data
           - libcec4
           - ffmpeg
           - libavcodec-extra
@@ -132,6 +129,8 @@
           - libswscale5
           - pulseaudio
           - pulseaudio-utils
+          - xorg
+          - kodi
 
     - name: Ensure group "kodi" exists with correct gid
       group:
