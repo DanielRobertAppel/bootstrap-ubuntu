@@ -52,11 +52,7 @@
 
     - name: "Installing dav1d AV1 Decoder Library"
       shell:
-        cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/libdav1d4_0.7.1-3~bpo10+1_arm64.deb
-
-    - name: "Installing dav1d AV1 Decoder"
-      shell:
-        cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/dav1d_0.7.1-3~bpo10+1_arm64.deb
+        cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/libdav1d-dev_0.7.1-3~bpo10+1_arm64.deb
 
     - name: "Installing Build Dependencies"
       apt:
