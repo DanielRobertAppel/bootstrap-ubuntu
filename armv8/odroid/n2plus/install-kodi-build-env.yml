@@ -6,6 +6,14 @@
       shell:
         cmd: echo none > /sys/class/leds/blue\:heartbeat/trigger
 
+# TODO
+# Build ffmpeg (>4.3) from source
+# what the hell is iso9660pp_library (try libcdio++-dev from the deb src)
+# mdns
+# sndio
+# udfread
+# 
+
     - name: "Place Blue LED control script"
       copy:
         src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/blue-led-pulse-stop.sh
