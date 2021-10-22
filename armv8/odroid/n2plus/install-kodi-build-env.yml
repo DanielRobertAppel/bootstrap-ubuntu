@@ -104,7 +104,7 @@
           - libomxil-bellagio-dev
           - libpcre3-dev
           - libplist-dev
-          - libpng12-dev
+          - libpng-dev
           - libpulse-dev
           - libshairplay-dev
           - libsmbclient-dev
