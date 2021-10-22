@@ -9,7 +9,7 @@ User = kodi
 Group = kodi
 Type = simple
 #PAMName = login # you might want to try this one, did not work on all systems
-ExecStart = echo "none" > /sys/class/leds/blue\:heartbeat/trigger && /usr/bin/kodi-standalone
+ExecStart = /usr/bin/kodi-standalone
 Restart = on-abort
 RestartSec = 5
 

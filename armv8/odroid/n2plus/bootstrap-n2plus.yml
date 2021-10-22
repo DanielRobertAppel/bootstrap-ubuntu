@@ -6,6 +6,34 @@
       shell:
         cmd: echo none > /sys/class/leds/blue\:heartbeat/trigger
 
+    - name: "Place Blue LED control script"
+      copy:
+        src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/blue-led-pulse-stop.sh
+        dest: /root/blue-led-pulse-stop.sh
+        owner: root
+        group: root
+        mode: '0770'
+
+    - name: "Set Blue LED to OFF after startup"
+      cron:
+        name: "Blue LED Stop"
+        special_time: reboot
+        job: /root/blue-led-pulse-stop.sh
+
+    - name: "Place Cursor Blink Control Script"
+      copy:
+        src: /root/bootstrap-ubuntu/armv8/odroid/n2plus/blinking-cursor-stop.sh
+        dest: /root/blinking-cursor-stop.sh
+        owner: root
+        group: root
+        mode: '0770'
+
+    - name: "Stop Cursor Blinking after Startup"
+      cron:
+        name: "Cursor Blink Stop"
+        special_time: reboot
+        job: /root/blinking-cursor-stop.sh
+            
     - name: "Generating locale for UK English"
       shell:
         cmd: locale-gen en_GB.UTF-8
