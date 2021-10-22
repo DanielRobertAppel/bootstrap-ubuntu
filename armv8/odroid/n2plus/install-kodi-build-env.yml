@@ -88,7 +88,7 @@
           - libgl-dev
           - libglew-dev
           - libglu1-mesa-dev
-          - libgnutls-dev
+          - libgnutls28-dev
           - libgpg-error-dev
           - libgtest-dev
           - libios9660-dev
