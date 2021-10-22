@@ -68,7 +68,7 @@
           - libbluray-dev
           - libbz2-dev
           - libcdio-dev
-          - libcec4-dev
+          - libcec-dev
           - libp8-platform-dev
           - libcrossguid-dev
           - libcurl4-openssl-dev
