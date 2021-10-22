@@ -91,7 +91,7 @@
           - libgnutls28-dev
           - libgpg-error-dev
           - libgtest-dev
-          - libios9660-dev
+          - libiso9660-dev
           - libjpeg-dev
           - liblcms2-dev
           - liblirc-dec
