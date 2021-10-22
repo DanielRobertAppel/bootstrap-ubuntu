@@ -94,7 +94,7 @@
           - libiso9660-dev
           - libjpeg-dev
           - liblcms2-dev
-          - liblirc-dec
+          - liblirc-dev
           - libltdl-dev
           - liblzo2-dev
           - libmicrohttpd-dev
