@@ -42,6 +42,14 @@
       shell:
         cmd: localectl set-keymap gb
 
+    - name: "Installing libshairplay0 package"
+      shell:
+        cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay0_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
+
+    - name: "Installing libshairplay-dev package"
+      shell:
+        cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay-dev_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
+
     - name: "Installing Build Dependencies"
       apt:
         name:
@@ -116,7 +124,7 @@
           - libtinyxml-dev
           - libtool
           - libudev-dev
-          - libva-dec
+          - libva-dev
           - libvdpau-dev
           - libvorbis-dev
           - libxkbcommon-dev
