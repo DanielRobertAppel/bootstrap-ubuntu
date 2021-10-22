@@ -50,6 +50,14 @@
       shell:
         cmd: dpkg -i /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay-dev_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
 
+    - name: "Installing dav1d AV1 Decoder Library"
+      shell:
+        cmd: dpkg -i /root/bootstrap-ubuntu/arm8/odroid/n2plus/libdav1d4_0.7.1-3~bpo10+1_arm64.deb
+
+    - name: "Installing dav1d AV1 Decoder"
+      shell:
+        cmd: dpkg -i /root/bootstrap-ubuntu/arm8/odroid/n2plus/dav1d_0.7.1-3~bpo10+1_arm64.deb
+        
     - name: "Installing Build Dependencies"
       apt:
         name:
@@ -58,6 +66,8 @@
           - autopoint
           - gettext
           - autotools-dev
+          - ccache
+          - clang-format
           - cmake
           - curl
           - default-jre
@@ -78,6 +88,7 @@
           - libcdio-dev
           - libcec-dev
           - libp8-platform-dev
+          - libcap-dev
           - libcrossguid-dev
           - libcurl4-openssl-dev
           - libcwiid-dev
