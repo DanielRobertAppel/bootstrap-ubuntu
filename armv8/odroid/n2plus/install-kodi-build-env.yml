@@ -78,7 +78,7 @@
           - libenca-dev
           - libflac-dev
           - libfontconfig-dev
-          - libfmt3-dev
+          - libfmt-dev
           - libfreetype6-dev
           - libfribidi-dev
           - libfstrcmp-dev
