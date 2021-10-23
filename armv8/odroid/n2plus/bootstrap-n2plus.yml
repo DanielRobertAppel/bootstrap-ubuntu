@@ -46,13 +46,13 @@
       apt_repository:
         repo: ppa:team-xbmc/ppa
 
-    - name: "Install libshairplay-dev"
-      apt:
-        deb: /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay-dev_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
-
     - name: "Install libshairplay0"
       apt:
         deb: /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay0_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
+
+    - name: "Install libshairplay-dev"
+      apt:
+        deb: /root/bootstrap-ubuntu/armv8/odroid/n2plus/libshairplay-dev_0.9.0~git20180824.096b61a+dfsg1-2~bpo10+1_arm64.deb
 
     - name: "Install Kodi and Dependencies"
       apt:
