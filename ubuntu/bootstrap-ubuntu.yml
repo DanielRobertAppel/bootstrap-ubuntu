@@ -64,10 +64,6 @@
       apt_repository:
         repo: ppa:savoury1/digikam
 
-    - name: "Install Savoury1 Repository - Display"
-      apt_repository:
-        repo: ppa:savoury1/display
-
     - name: "Install Savoury1 Repository - DosBox"
       apt_repository:
         repo: ppa:savoury1/dosbox
@@ -99,10 +95,6 @@
     - name: "Install Savoury1 Repository - GPG"
       apt_repository:
         repo: ppa:savoury1/gpg
-
-    - name: "Install Savoury1 Repository - Graphics"
-      apt_repository:
-        repo: ppa:savoury1/graphics
 
     - name: "Install Savoury1 Repository - HandBrake"
       apt_repository:
