@@ -36,18 +36,6 @@
         state: present
         filename: 'vscode'
 
-    - name: "Install Savoury1 Repository - Gimp"
-      apt_repository:
-        repo: ppa:savoury1/gimp
-
-    - name: "Install Savoury1 Repository - HandBrake"
-      apt_repository:
-        repo: ppa:savoury1/handbrake
-
-    - name: "Install Savoury1 Repository - VLC3"
-      apt_repository:
-        repo: ppa:savoury1/vlc3
-
     - name: "Install TuxInvader Repository - LTS Mainline"
       apt_repository:
         repo: ppa:tuxinvader/lts-mainline
@@ -69,7 +57,6 @@
         name:
           - code
           - dconf-editor
-          - vlc
           - google-chrome-stable
           - ffmpeg
           - cowsay
