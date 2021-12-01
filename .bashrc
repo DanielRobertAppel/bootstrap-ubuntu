@@ -131,8 +131,6 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 fi
 # ENDOF POWERLINESHELL
 
-export WINTERWELL_HOME="/home/daniel/winterwell"
-export PATH=$WINTERWELL_HOME/code/script:$PATH
 export PATH=/snap/bin:$PATH
 
 export PATH="$PATH:/opt/mozjpeg/bin"
